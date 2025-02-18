@@ -24,6 +24,12 @@ function DurationExercise({ name }) {
         <div>
             <h2>{name}</h2>
             <p>Time: {formatTime(time)}</p>
+            <button onClick={() => setIsRunning(!isRunning)}>
+                {isRunning ? 'Stop' : 'Start'}
+            </button>
+            <button onClick ={ () => setTime(0)}>Reset</button>
         </div>
-     )
+     );
 }
+
+export default DurationExercise;
