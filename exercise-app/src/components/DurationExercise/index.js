@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
+//https://medium.com/how-to-react/simple-way-to-create-a-stopwatch-in-react-js-bcc0e08e041e
 
 function DurationExercise({ name }) {
     const [time, setTime] = useState(0);
@@ -11,13 +12,15 @@ function DurationExercise({ name }) {
                 setTime((prevTime) => prevTime + 1);
             }, 1000);
         }
-        return ()=> clearInterval(interval);
-    }, [isRunning]);
+        return ()=> {
+           if (interval) clearInterval(interval);
+    };
+}, [isRunning]);
 
      const formatTime = (time) => {
         const minutes = Math.floor(time / 60).toString().padStart(2,'0');
         const seconds = (time % 60).toString().padStart(2, '0');
-        return '${minutes}:${seconds}';
+        return `${minutes}:${seconds}`;
      };
 
      return (
