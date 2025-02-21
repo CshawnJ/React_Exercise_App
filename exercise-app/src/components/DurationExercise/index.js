@@ -7,7 +7,7 @@ function DurationExercise({ name }) {
 
     useEffect(() => {
         let interval;
-        if (isRunning) {
+        if (isRunning) { //increase time for every second or 1000 milliseconds
             interval = setInterval(() => {
                 setTime((prevTime) => prevTime + 1);
             }, 1000);
@@ -16,7 +16,7 @@ function DurationExercise({ name }) {
            if (interval) clearInterval(interval);
     };
 }, [isRunning]);
-
+    //sticking to minutes and seconds for now
      const formatTime = (time) => {
         const minutes = Math.floor(time / 60).toString().padStart(2,'0');
         const seconds = (time % 60).toString().padStart(2, '0');
@@ -26,7 +26,7 @@ function DurationExercise({ name }) {
      return (
         <div>
             <h2>{name}</h2>
-            <p>Time: {formatTime(time)}</p>
+            <p>Let's see something: {formatTime(time)}</p>
             <button onClick={() => setIsRunning(!isRunning)}>
                 {isRunning ? 'Stop' : 'Start'}
             </button>
