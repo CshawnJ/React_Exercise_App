@@ -1,7 +1,7 @@
 {
   "name": "exercise-app",
   "version": "0.1.0",
-  "homepage": "https://<CshawnJ>.github.io/<React_Exercise_App>",
+  "homepage": "https://CshawnJ.github.io/React_Exercise_App",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
